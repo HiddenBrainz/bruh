@@ -9,6 +9,19 @@ on:
       - '*'
 
 jobs:
+  createFile:
+    name: Create A File
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: 1arp/create-a-file-action@0.4.5
+        with:
+          path: '/'
+          isAbsolutePath: false
+          file: 'testing.ipynb'
+          content: |
+            Hello
+            World:
   build:
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +43,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
