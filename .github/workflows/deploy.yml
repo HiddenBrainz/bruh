@@ -25,6 +25,7 @@ jobs:
       - name: printworkingdirectory
         run:  |
           pwd
+          ls
   build:
     runs-on: ubuntu-latest
     steps:
