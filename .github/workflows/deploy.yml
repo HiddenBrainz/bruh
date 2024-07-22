@@ -22,6 +22,19 @@ jobs:
         run: |
           pip install pyodide-build
           python -m pip install -r requirements.txt
+  createFile:
+    name: Create A File
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: 1arp/create-a-file-action@0.4.5
+        with:
+          path: '/'
+          isAbsolutePath: false
+          file: 'testing.ipynb'
+          content: |
+            Hello
+            World:
       - name: Build the JupyterLite site
         run: |
           cp README.md content
