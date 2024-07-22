@@ -18,7 +18,7 @@ jobs:
         with:
           path: '/'
           isAbsolutePath: false
-          file: 'testing.ipynb'
+          file: 'testing.txt'
           content: |
             Hello
             World:
@@ -41,7 +41,7 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content --contents /testing.ipynb --output-dir dist
+          jupyter lite build --contents content --contents /home/runner/work/bruh/bruh/testing.ipynb --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
