@@ -22,25 +22,10 @@ jobs:
         run: |
           pip install pyodide-build
           python -m pip install -r requirements.txt
-      - name: Setup emsdk
-        uses: mymindstorm/setup-emsdk@v14
-        with:
-          version: 3.1.46
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          repository: healpy/pyhealpy
-          path: pyhealpy
-      - name: Build wheel
-        working-directory: pyhealpy
-        run: |
-          pyodide build
-          mv /home/runner/work/bruh/bruh/pyhealpy/dist/ content/
-          
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content --output-dir dist
+          jupyter lite build --contents content --contents PurelyTesting.ipynb --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
