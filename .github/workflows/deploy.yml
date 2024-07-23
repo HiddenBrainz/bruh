@@ -37,6 +37,8 @@ jobs:
           python-version: '3.11'
       - name: Install the dependencies
         run: |
+          pwd
+          ls
           pip install pyodide-build
           python -m pip install -r requirements.txt
       - name: Build the JupyterLite site
