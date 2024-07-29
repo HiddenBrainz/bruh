@@ -38,6 +38,7 @@ jobs:
           pip install pyodide-build
           pip install jupyterlab-open-url-parameter
           python -m pip install -r requirements.txt
+          jupyter labextension list
       - name: Build the JupyterLite site
         run: |
           cp README.md content
