@@ -40,6 +40,8 @@ jobs:
         working-directory: jupyterlab-open-url-dataset
         run: |
           pip install -e .
+          pwd 
+          ls
       - name: Install the dependencies
         run: |
           pwd
