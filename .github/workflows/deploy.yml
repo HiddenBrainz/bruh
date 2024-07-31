@@ -31,6 +31,15 @@ jobs:
         run:  |
           pwd
           ls
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          repository: eshaank1/jupyterlab-open-url-dataset
+          path: jupyterlab-open-url-dataset
+      - name: install urldataset
+        working-directory: jupyterlab-open-url-dataset
+        run: |
+          pip install -e .
       - name: Install the dependencies
         run: |
           pwd
