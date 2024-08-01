@@ -43,7 +43,9 @@ jobs:
           pwd
           ls
           cd docs
-          mv jupyter-lite.json /home/runner/work/bruh/bruh/_output/jupyterlab-open-url-dataset/docs/jupyter-lite.json
+          ls
+          git submodule init
+          git submodule update
       - name: Install the dependencies
         run: |
           pwd
