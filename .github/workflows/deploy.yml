@@ -31,21 +31,6 @@ jobs:
         run:  |
           pwd
           ls
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          repository: eshaank1/jupyterlab-open-url-dataset
-          path: jupyterlab-open-url-dataset
-      - name: install urldataset
-        working-directory: jupyterlab-open-url-dataset
-        run: |
-          pip install -e .
-          pwd
-          ls
-          cd docs
-          ls
-          mkdir /home/runner/work/bruh/bruh/_output/jupyterlab-open-url-dataset/docs/
-          mv jupyter-lite.json /home/runner/work/bruh/bruh/_output/jupyterlab-open-url-dataset/docs/jupyter-lite.json
       - name: Install the dependencies
         run: |
           python -m pip install -r requirements.txt
@@ -60,7 +45,7 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb 
+          jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb --output-dir ../jup
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
