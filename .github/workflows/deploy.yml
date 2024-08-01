@@ -42,10 +42,6 @@ jobs:
           pip install -e .
           pwd 
           ls
-      - name: Install the dependencies
-        run: |
-          pwd
-          ls
           pip install pyodide-build
           pip install jupyterlab-open-url-parameter
           python -m pip install -r requirements.txt
