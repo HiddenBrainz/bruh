@@ -44,10 +44,8 @@ jobs:
           ls
           pip install pyodide-build
           pip install jupyterlab-open-url-parameter
-          python -m pip install -r requirements.txt
           jupyter labextension list
-      - name: Build the JupyterLite site
-        run: |
+          cd ..
           cp README.md content
           jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb  --output-dir dist
       - name: Upload artifact
