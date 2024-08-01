@@ -44,12 +44,14 @@ jobs:
           ls
           cd docs
           ls
-          git submodule init
-          git submodule update
+
       - name: Install the dependencies
         run: |
           pwd
           ls
+          cd jupyterlab-open-url-dataset
+          cd docs
+          ls 
           pip install pyodide-build
           pip install jupyterlab-open-url-parameter
           python -m pip install -r requirements.txt
