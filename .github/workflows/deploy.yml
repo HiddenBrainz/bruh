@@ -42,7 +42,7 @@ jobs:
           pip install -e .
           pwd
           ls
-          cd jupyterlab-open-url-dataset
+          cd jupyterlab_open_url_dataset
           ls
           cd docs
       - name: Install the dependencies
@@ -56,7 +56,7 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb  --output-dir dist
+          jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
