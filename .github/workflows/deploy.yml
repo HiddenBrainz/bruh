@@ -40,12 +40,21 @@ jobs:
         working-directory: jupyterlab-open-url-dataset
         run: |
           pip install -e .
-          pwd 
+          pwd
+          ls
+          cd jupyterlab-open-url-dataset
+          ls
+          cd docs
+      - name: Install the dependencies
+        run: |
+          pwd
           ls
           pip install pyodide-build
           pip install jupyterlab-open-url-parameter
-          cd ..
+          python -m pip install -r requirements.txt
           jupyter labextension list
+      - name: Build the JupyterLite site
+        run: |
           cp README.md content
           jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb  --output-dir dist
       - name: Upload artifact
