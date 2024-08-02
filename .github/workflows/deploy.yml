@@ -47,11 +47,11 @@ jobs:
           pwd
           ls
           cp README.md content
-          jupyter lite build --contents content --output-dir .
+          jupyter lite build --contents content --output-dir jup
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: jup
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
