@@ -30,10 +30,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          repository: jupyterlab-contrib/jupyterlab-open-url-parameter
-          path: jupyterlab-open-url-parameter
+          repository: eshaank1/jupyterlab-open-url-dataset
+          path: jupyterlab-open-url-dataset
       - name: install urldataset
-        working-directory: jupyterlab-open-url-parameter
+        working-directory: jupyterlab-open-url-dataset
         run: |
           pip install -e .
       - name: Install the dependencies
@@ -41,7 +41,7 @@ jobs:
           python -m pip install -r requirements.txt
           pip install pyodide-build
           jupyter labextension list
-          cat jupyterlab-open-url-parameter/docs/jupyter-lite.json
+          cat jupyterlab-open-url-dataset/docs/jupyter-lite.json
       - name: Build the JupyterLite site
         run: |
           pwd
