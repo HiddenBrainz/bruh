@@ -49,11 +49,11 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb --output-dir ../jup
+          jupyter lite build --contents content --contents URLs.txt --contents testing.ipynb --output-dir .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ../jup
+          path: .
   deploy:
     needs: build
     if: github.ref == 'refs/heads/main'
